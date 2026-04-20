@@ -48,7 +48,7 @@ func Run(t *testing.T, tc []TestCase, f func(r io.Reader, w io.Writer) error) {
 			want := strings.TrimSpace(tt.Expected)
 
 			if got != want {
-				t.Errorf("Ввод: %s\nОжидалось: %s\nПолучено: %s", tt.Input, want, got)
+				t.Errorf("input: %s\nwant: %s\ngot: %s\n", tt.Input, want, got)
 			}
 		})
 	}
@@ -57,12 +57,12 @@ func Run(t *testing.T, tc []TestCase, f func(r io.Reader, w io.Writer) error) {
 func LoadTestCases(t *testing.T, path string) []TestCase {
 	data, err := os.ReadFile(path)
 	if err != nil {
-		t.Fatalf("Не удалось прочитать файл %s: %v", path, err)
+		t.Fatalf("failed to open file %s: %v", path, err)
 	}
 	var tests []TestCase
 	err = json.Unmarshal(data, &tests)
 	if err != nil {
-		t.Fatalf("Ошибка при десериализации JSON %v", err)
+		t.Fatalf("failed to parse JSON %v", err)
 	}
 	return tests
 }
