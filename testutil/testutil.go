@@ -48,7 +48,7 @@ func Run(t *testing.T, tc []TestCase, f func(r io.Reader, w io.Writer) error) {
 			want := strings.TrimSpace(tt.Expected)
 
 			if got != want {
-				t.Errorf("input: %s\nwant: %s\ngot: %s\n", tt.Input, want, got)
+				t.Errorf("\ninput: %s\nwant: %s\ngot: %s\n", tt.Input, want, got)
 			}
 		})
 	}
