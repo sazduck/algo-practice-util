@@ -41,7 +41,7 @@ func Run(t *testing.T, tc []TestCase, f func(r io.Reader, w io.Writer) error) {
 			var sb strings.Builder
 
 			if err := f(r, &sb); err != nil {
-				t.Fatal(err)
+				t.Error(err)
 			}
 
 			got := strings.TrimSpace(sb.String())
