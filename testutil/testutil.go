@@ -8,25 +8,6 @@ import (
 	"testing"
 )
 
-/*
-
-// coderun
-copy([...document.querySelectorAll('.io-sample>div')].map((d, i) => ({
-  name: `example ${i}`,
-  input: d.querySelector('.input-snippet code').innerText,
-  expected: d.querySelector('.output-snippet code').innerText,
-})));
-
-// яндекс контест мб другие будут классы TODO
-[...document.querySelectorAll('.StatementSamples_StatementSamples-Sample__0nXC_')]
-.map((d, i) => ({
-  name: `example ${i}`,
-  input: d.querySelector('.CodeSnippet_CodeSnippet-Code__CBRAd.IOSnippet_IOSnippet-Code__En89R code').innerText,
-  expected: d.querySelectorAll('.CodeSnippet_CodeSnippet-Code__CBRAd.IOSnippet_IOSnippet-Code__En89R code')[1].innerText
-}))
-
-*/
-
 type TestCase struct {
 	Name     string `json:"name"`
 	Input    string `json:"input"`
